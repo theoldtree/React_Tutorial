@@ -22,6 +22,13 @@ export default function Somthing(){
 
 ```
 
+### Props
+
+Component 내부의 데이터라고 볼수 있다. props를 전달하는 방법에는 두가지가 있다. 
+
+* funtion *Component(props)* -> *props.something* 으로 값을 전달, 태그 내에 쓸때는 {}으로 감싸준다. 하나의 Component에 있는 여러개의 props를 전달받을 수 있다. 
+
+* function *Component({something1, something2, something3})* -> props를 쓸필요 없이 props의 이름을 직접 명시를 한다. 활용할때는 {}내에 써주도록 한다.
 
 ## Available Scripts
 
