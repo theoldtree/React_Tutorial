@@ -1,5 +1,28 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## React Common Knowledge
+
+### index.js
+
+App.js 를 실행시키는 코드가 있음. 한개의 컴포넌트만 실행 가능 (ex. App.js). root 내로 element를 감싸준다
+
+### Component
+
+리액트에서 작동하는 원리, *somthing.js* **(import React from 'react 필수)** 파일에서 함수를 component로 바꿔 준다.
+바꾼 component를 활용하기 위해서 *something.js*파일에서 eport 를 시켜 주어야 한다.
+
+```
+import React from 'react';
+
+export default function Somthing(){
+  return(
+    ~~~
+  )
+}
+
+```
+
+
 ## Available Scripts
 
 In the project directory, you can run:
