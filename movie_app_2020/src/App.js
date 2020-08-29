@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Family from './family';
 
 function Food({name}){
@@ -47,9 +47,21 @@ function renderClub(club){
 }
 
 function App() {
+
+  const [state, setState] = useState(0);
+
+  function minus(){
+    console.log("minus");
+    setState(state-1);
+  }
+
+  function add(){
+    console.log("add");
+    setState(state+1)
+  }
+
   return (
   <div>
-    <h1> Hello!!! ^오^ </h1>
     <Family />
     <Food
       name = "pasta"
@@ -59,6 +71,11 @@ function App() {
     />
     {club_I_was_in.map(club => <Club name = {club.name} amount = {club.amount} key = {club.key}/>)}
     {club_I_was_in.map(renderClub)}
+    <div>
+      <h2> You clicked {state} times </h2>
+      <button onClick = {add}>Add</button>
+      <button onClick = {minus}>Minus</button>
+    </div>
   </div>);
 }
 

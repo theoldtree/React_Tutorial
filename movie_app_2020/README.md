@@ -5,6 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Component는 함수 자체이다. -> 태그만 사용
 3. Comopnent내에서 props로 데이터 전달 가능
 4. 배열을 이용할때는 map함수를 이용하면 좋음
+5. 함수의 정의 -> function Something(){}
+6. Hooks(useState)는 오직 function Component내에서만 사용이 가능하다
 
 ### index.js
 
@@ -66,6 +68,11 @@ function Comopnent({name, picture}){
 ```
 3. somthing.map을 이용해 렌더링 -> something.map(props => {console.log(props)}), something.map(props => <Component name = "props.~~", picture = props.source key = props.key/>)
 4. **map 함수를 이용해 렌더링 할때는 반드시 함수안에 key값을 지정해주기**
+
+### useState로 상태관리
+1. import React, {useState} from 'react';
+2. Component 내에 const [state, setState] = useState(object, number, string, array 등의 형태)로 state값을 정의함.
+3. Component 내에서 함수를 생성함 으로써 setState(~~) 로 state에 관한 상태를 관리한다.
 
 ## Available Scripts
 
