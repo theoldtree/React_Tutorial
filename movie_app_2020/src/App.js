@@ -18,7 +18,7 @@ function Club(props){
   return(
     <div>
       <h3> I engaged in {props.name}</h3>
-      <h3>   동아리의 규모 : {props.amount}</h3>
+      <h3> 동아리의 규모 : {props.amount}</h3>
     </div>
   );
 }
@@ -41,6 +41,11 @@ const club_I_was_in = [
   }
 ];
 
+function renderClub(club){
+  console.log(club);
+  return <Club name = {club.name} amount = {club.amount} key = {club.key}/>
+}
+
 function App() {
   return (
   <div>
@@ -53,6 +58,7 @@ function App() {
       name = "badminton"
     />
     {club_I_was_in.map(club => <Club name = {club.name} amount = {club.amount} key = {club.key}/>)}
+    {club_I_was_in.map(renderClub)}
   </div>);
 }
 
