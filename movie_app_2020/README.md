@@ -1,12 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## React Common Knowledge
+1. return 내에서 함수를 이용할때는 {}
+2. Component는 함수 자체이다. -> 태그만 사용
+3. Comopnent내에서 props로 데이터 전달 가능
+4. 배열을 이용할때는 map함수를 이용하면 좋음
 
 ### index.js
 
 App.js 를 실행시키는 코드가 있음. 한개의 컴포넌트만 실행 가능 (ex. App.js). root 내로 element를 감싸준다
 
-### Component
+### Component(함수)
 
 리액트에서 작동하는 원리, *somthing.js* **(import React from 'react 필수)** 파일에서 함수를 component로 바꿔 준다.
 바꾼 component를 활용하기 위해서 *something.js*파일에서 eport 를 시켜 주어야 한다.
@@ -14,7 +18,7 @@ App.js 를 실행시키는 코드가 있음. 한개의 컴포넌트만 실행 �
 ```
 import React from 'react';
 
-export default function Somthing(){
+export default function Something(){
   return(
     ~~~
   )
@@ -29,6 +33,39 @@ Component 내부의 데이터라고 볼수 있다. props를 전달하는 방법�
 * funtion *Component(props)* -> *props.something* 으로 값을 전달, 태그 내에 쓸때는 {}으로 감싸준다. 하나의 Component에 있는 여러개의 props를 전달받을 수 있다. 
 
 * function *Component({something1, something2, something3})* -> props를 쓸필요 없이 props의 이름을 직접 명시를 한다. 활용할때는 {}내에 써주도록 한다.
+
+### 내부 함수의 형태 두가지 -> ()안에 들어가는 함수
+* 
+```
+function(props) {
+  console.log(props)
+  return(
+    ~~~~
+  );
+}
+```
+
+*
+```
+props => {
+  console.log(props);
+}
+```
+
+### 배열을 이용할 때 사용하는 함수 map
+1. const를 이용해 배열 생성 -> object로 생성 const something = [{},{},{},{}]
+2. 배열을 이용하여 인자값마다 적용할 Component 함수가 있어야함 
+```
+function Comopnent({name, picture}){
+  return
+    <div>
+      <h2> i like {name} </h2>
+      <img src = {piecture} />
+    </div>
+}  
+```
+3. somthing.map을 이용해 렌더링 -> something.map(props => {console.log(props)}), something.map(props => <Component name = "props.~~", picture = props.source key = props.key/>)
+4. **map 함수를 이용해 렌더링 할때는 반드시 함수안에 key값을 지정해주기**
 
 ## Available Scripts
 
