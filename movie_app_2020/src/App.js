@@ -8,6 +8,12 @@ function Food({name}){
   );
 }
 
+function Sports(props){
+  return(
+  <h2> I like {props.name}</h2>
+  );
+}
+
 function App() {
   return (
   <div>
@@ -21,6 +27,9 @@ function App() {
     />
     <Food
       name = "grape"
+    />
+    <Sports
+      name = "badminton"
     />
   </div>);
 }
