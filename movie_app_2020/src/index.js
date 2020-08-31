@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Movie_App from './Movie_App';
+import MovieApp from './Movie_App';
+
+const isMovie_App = false;
 
 ReactDOM.render(
   <React.StrictMode>
-    <Movie_App />
+    {isMovie_App? <App/> : <MovieApp/>}
   </React.StrictMode>,
   document.getElementById('root')
 );

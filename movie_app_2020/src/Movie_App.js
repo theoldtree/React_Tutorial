@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-export default function Movie_App(){
+export default function MovieApp(){
+
+  const [state,setState] = useState({ isLoading : true });
+
   return(
     <div>
-      <h3>Movie_App</h3>
+      {state.isLoading ? "Loading..." : "We are ready"};
     </div>
   );
 }
