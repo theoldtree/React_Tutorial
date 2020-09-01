@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function MovieApp(){
 
   const [state,setState] = useState({ isLoading : true });
+  const { isLoading } = state;
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setState({ isLoading : false });
+    },6000);
+  })
 
   return(
     <div>
-      {state.isLoading ? "Loading..." : "We are ready"};
+      {isLoading ? "Loading..." : "We are ready"};
     </div>
   );
 }

@@ -74,6 +74,17 @@ function Comopnent({name, picture}){
 2. Component 내에 const [state, setState] = useState(object, number, string, array 등의 형태)로 state값을 정의함.
 3. Component 내에서 함수를 생성함 으로써 setState(~~) 로 state에 관한 상태를 관리한다.
 
+### 리액트 lifecycle 
+* Class를 통한 관리 -> ㄴ
+- **Mounting** : 컴포넌트가 screen에 출력이 될때
+1. constructor()
+2. **render()**
+3. **componentDidMount()** : 컴포넌트가 render를 할때
+- **Updating** : State를 변경할 때, setState를 실행할 시 실행됨 *(4~5가 반복)*
+4. **render()** : 처음에 실행되고 다시 실행
+5. **componentDidUpdate()**
+- **Unmounting**
+
 ## Available Scripts
 
 In the project directory, you can run:
