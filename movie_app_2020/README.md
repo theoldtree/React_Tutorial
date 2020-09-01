@@ -78,13 +78,13 @@ function Comopnent({name, picture}){
 * Class를 통한 관리 -> state 와 setState이용
   - **Mounting** : 컴포넌트가 screen에 출력이 될때
     1. constructor()
-    2. **render()**
-    3. **componentDidMount()** : 컴포넌트가 render를 할때
+    1. **render()**
+    1. **componentDidMount()** : 컴포넌트가 render를 할때
   - **Updating** : State를 변경할 때, setState를 실행할 시 실행됨(render와 compnentDidUpdate 반복)
-    4. **render()** : 처음에 실행되고 다시 실행
-    5. **componentDidUpdate()**
+    1. **render()** : 처음에 실행되고 다시 실행
+    1. **componentDidUpdate()**
   - **Unmounting**
-    6. **comonentWillUnmount()**
+    1. **comonentWillUnmount()**
 * Hook을 통한 관리(렌더링과 effect) -> useState, useEffect 이용
   - useEffect : 렌더링 이후에 어떤일을 수행해야하는지 말함, componentDidMount,componentDidUpdate, componentWillUnmount가 합쳐짐
   - 여러개의 state를 사용 할 수 있으므로 state 별로 effect를 관리할 수 있음. 단계별로 렌더링을 관리했던 위의 방식(버그 발생가능성도 있음)과 비교하면 매우 편리
