@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Component는 함수 자체이다. -> 태그만 사용
 3. Comopnent내에서 props로 데이터 전달 가능
 4. 배열을 이용할때는 map함수를 이용하면 좋음
-5. 함수의 정의 -> function Something(){}
+5. 함수의 정의 -> function something(){}, const something = () => {}
 6. Hooks(useState)는 오직 function Component내에서만 사용이 가능하다
 
 ### index.js
@@ -57,17 +57,33 @@ props => {
 ### 배열을 이용할 때 사용하는 함수 map
 1. const를 이용해 배열 생성 -> object로 생성 const something = [{},{},{},{}]
 2. 배열을 이용하여 인자값마다 적용할 Component 함수가 있어야함 
+3. somthing.map을 이용해 렌더링 -> something.map(props => {console.log(props)}), something.map(props => <Component name = "props.~~", picture = props.source key = props.key/>)
+4. **map 함수를 이용해 렌더링 할때는 반드시 함수안에 key값을 지정해주기**
+5. component에 id가 없을 경우 map함수가 제공하는 argumnet 이용(매개변수와 index제공)
 ```
+ex)
+const array = [
+  {
+    name : ~~,
+    picture : ~~
+  },
+  {
+    name : ~~,
+    picture : ~~
+  },
+    ...  
+]
+array.map((prop, index) => 
+  <Component key = {index} name = {prop.name} picture = {prop.picture}>
+) 
 function Comopnent({name, picture}){
   return
     <div>
       <h2> i like {name} </h2>
-      <img src = {piecture} />
+      <img src = {picture} />
     </div>
 }  
 ```
-3. somthing.map을 이용해 렌더링 -> something.map(props => {console.log(props)}), something.map(props => <Component name = "props.~~", picture = props.source key = props.key/>)
-4. **map 함수를 이용해 렌더링 할때는 반드시 함수안에 key값을 지정해주기**
 
 ### useState로 상태관리
 1. import React, {useState} from 'react';
@@ -77,14 +93,14 @@ function Comopnent({name, picture}){
 ### 리액트 lifecycle 
 * Class를 통한 관리 -> state 와 setState이용
   - **Mounting** : 컴포넌트가 screen에 출력이 될때  
-    1.constructor()  
-    2.**render()**  
-    3.**componentDidMount()** : 컴포넌트가 render를 할때  
+    `1. constructor()  
+    `2. **render()**  
+    `3. **componentDidMount()** : 컴포넌트가 render를 할때  
   - **Updating** : State를 변경할 때, setState를 실행할 시 실행됨 *(4~5가 반복)*  
-    4.**render()** : 처음에 실행되고 다시 실행  
-    5.**componentDidUpdate()**  
+    `4. **render()** : 처음에 실행되고 다시 실행  
+    `5. **componentDidUpdate()**  
   - **Unmounting**  
-    6.**comonentWillUnmount()**  
+    a6. **comonentWillUnmount()**  
 * Hook을 통한 관리(렌더링과 effect) -> useState, useEffect 이용
   - useEffect : 렌더링 이후에 어떤일을 수행해야하는지 말함, componentDidMount,componentDidUpdate, componentWillUnmount가 합쳐짐
   - 여러개의 state를 사용 할 수 있으므로 state 별로 effect를 관리할 수 있음. 단계별로 렌더링을 관리했던 위의 방식(버그 발생가능성도 있음)과 비교하면 매우 편리
