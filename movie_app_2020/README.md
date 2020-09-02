@@ -35,7 +35,7 @@ Component 내부의 데이터라고 볼수 있다. props를 전달하는 방법�
 
 * funtion *Component(props)* -> *{props.something}* 으로 값을 전달, 태그 내에 쓸때는 {}으로 감싸준다. 하나의 Component에 있는 여러개의 props를 전달받을 수 있다. 
 
-* function *Component({something1, something2, something3})* -> props를 쓸필요 없이 props의 이름을 직접 명시를 한다. 활용할때는 {}내에 써주도록 한다.
+* function *Component({something1, something2, something3})* -> props의 이름을 직접 명시를 한다. 활용할때는 {}내에 써주도록 한다.
 
 ### 내부 함수의 형태 두가지 -> ()안에 들어가는 함수
 * 
@@ -101,7 +101,7 @@ function Comopnent({name, picture}){
     .4.**render()** : 처음에 실행되고 다시 실행  
     .5.**componentDidUpdate()**  
   - **Unmounting**  
-    a6. **comonentWillUnmount()**  
+    .6. **comonentWillUnmount()**  
 * Hook을 통한 관리(렌더링과 effect) -> useState, useEffect 이용
   - useEffect : 렌더링 이후에 어떤일을 수행해야하는지 말함, componentDidMount,componentDidUpdate, componentWillUnmount가 합쳐짐
   - 여러개의 state를 사용 할 수 있으므로 state 별로 effect를 관리할 수 있음. 단계별로 렌더링을 관리했던 위의 방식(버그 발생가능성도 있음)과 비교하면 매우 편리
