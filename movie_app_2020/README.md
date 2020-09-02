@@ -94,12 +94,12 @@ function Comopnent({name, picture}){
 ### 리액트 lifecycle 
 * Class를 통한 관리 -> state 와 setState이용
   - **Mounting** : 컴포넌트가 screen에 출력이 될때  
-    `1. constructor()  
-    `2. **render()**  
-    `3. **componentDidMount()** : 컴포넌트가 render를 할때  
+    .1.constructor()  
+    .2.**render()**  
+    .3.**componentDidMount()** : 컴포넌트가 render를 할때  
   - **Updating** : State를 변경할 때, setState를 실행할 시 실행됨 *(4~5가 반복)*  
-    `4. **render()** : 처음에 실행되고 다시 실행  
-    `5. **componentDidUpdate()**  
+    .4.**render()** : 처음에 실행되고 다시 실행  
+    .5.**componentDidUpdate()**  
   - **Unmounting**  
     a6. **comonentWillUnmount()**  
 * Hook을 통한 관리(렌더링과 effect) -> useState, useEffect 이용
