@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. 배열을 이용할때는 map함수를 이용하면 좋음
 5. 함수의 정의 -> function something(){}, const something = () => {}
 6. Hooks(useState)는 오직 function Component내에서만 사용이 가능하다
+7. 구조분해 할당 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 ### index.js
 
@@ -32,7 +33,7 @@ export default function Something(){
 
 Component 내부의 데이터라고 볼수 있다. props를 전달하는 방법에는 두가지가 있다. 
 
-* funtion *Component(props)* -> *props.something* 으로 값을 전달, 태그 내에 쓸때는 {}으로 감싸준다. 하나의 Component에 있는 여러개의 props를 전달받을 수 있다. 
+* funtion *Component(props)* -> *{props.something}* 으로 값을 전달, 태그 내에 쓸때는 {}으로 감싸준다. 하나의 Component에 있는 여러개의 props를 전달받을 수 있다. 
 
 * function *Component({something1, something2, something3})* -> props를 쓸필요 없이 props의 이름을 직접 명시를 한다. 활용할때는 {}내에 써주도록 한다.
 
@@ -55,9 +56,9 @@ props => {
 ```
 
 ### 배열을 이용할 때 사용하는 함수 map
-1. const를 이용해 배열 생성 -> object로 생성 const something = [{},{},{},{}]
+1. const를 이용해 배열 생성 -> object로 생성 const array = [{},{},{},{}]
 2. 배열을 이용하여 인자값마다 적용할 Component 함수가 있어야함 
-3. somthing.map을 이용해 렌더링 -> something.map(props => {console.log(props)}), something.map(props => <Component name = "props.~~", picture = props.source key = props.key/>)
+3. somthing.map을 이용해 렌더링 -> array.map(props => {console.log(props)}), array.map(props => <Component name = "props.~~", picture = props.source key = props.key/>)
 4. **map 함수를 이용해 렌더링 할때는 반드시 함수안에 key값을 지정해주기**
 5. component에 id가 없을 경우 map함수가 제공하는 argumnet 이용(매개변수와 index제공)
 ```
